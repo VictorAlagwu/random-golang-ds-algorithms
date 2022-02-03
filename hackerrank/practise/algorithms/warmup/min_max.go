@@ -5,9 +5,9 @@ import (
     "fmt"
     "io"
     "os"
+    "sort"
     "strconv"
     "strings"
-    "sort"
 )
 
 // Complete the miniMaxSum function below.
