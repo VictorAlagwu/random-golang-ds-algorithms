@@ -1,19 +1,9 @@
 package main
 
-import (
-	"fmt"
-)
-
 const HomeTeamWon = 1
 
 func main(){
-	competitions := [][]string{
-		{"HTML", "C#"},
-		{"C#", "Python"},
-		{"Python", "HTML"},
-	}
-	results := []int{0,0,1}
-	fmt.Println("Tournament Winner: O(n)", tournamentWinner(competitions, results))
+
 }
 func tournamentWinner(competitions [][]string, results []int) string {
 	// Write your code here.
