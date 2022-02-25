@@ -74,16 +74,17 @@ func smallestDifferenceII(array1, array2 []int) []int {
 			fmt.Println("First Value", firstValue)
 			fmt.Println("Second Value", secondValue)
 			fmt.Println("Smallest Value", smallestDifference)
-			if  firstValue < secondValue {
-				getAbs = secondValue - firstValue
-				currentArrayOneIndex++
+			if  firstValue == secondValue {
+				arr[0] = firstValue
+				arr[1] = secondValue
+				return arr
+
 			} else if secondValue < firstValue  {
 				getAbs = firstValue - secondValue
 				currentArrayTwoIndex++
 			}else {
-				arr[0] = firstValue
-				arr[1] = secondValue
-				return arr
+				getAbs = secondValue - firstValue
+				currentArrayOneIndex++
 			}
 
 			if smallestDifference > getAbs {
