@@ -15,10 +15,8 @@ import (
 func main() {
 
 	arr := []int{12,3,1,2,-6,5,-8,6}
-
 	targetSum := 0
-
-	fmt.Println("Three Number Sum: ", threeNumberSum(arr, targetSum))
+	fmt.Println("Three Number Sum (2-pointer): ", threeNumberSum(arr, targetSum))
 }
 
 func threeNumberSum(array []int, target int) [][]int {
