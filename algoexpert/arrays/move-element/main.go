@@ -15,6 +15,7 @@ func main() {
 	nums := []int{2, 1, 2, 2, 2, 3, 4, 2}
 	toMove := 2
 	fmt.Println("Move Element to End:", moveElementToEnd(nums, toMove))
+	fmt.Println("Move Element to End (Using 2 Pointers):", moveElementToEndII(nums, toMove))
 }
 
 func moveElementToEnd(array []int, toMove int) []int {
@@ -30,4 +31,28 @@ func moveElementToEnd(array []int, toMove int) []int {
 	}
 	//Merge the two arrays...with the other
 	return append(arr, arr2...)
+}
+
+func moveElementToEndII(array []int, toMove int) []int  {
+	//Using two-pointers algorithm
+	firstIndexValue := 0
+	secondIndexValue := len(array) - 1
+
+	for firstIndexValue < secondIndexValue {
+		firstValue := array[firstIndexValue]
+		secondValue := array[secondIndexValue]
+		if secondValue == toMove {
+			secondIndexValue--
+		}else if firstValue != toMove && secondValue != toMove {
+			firstIndexValue++
+		}else if firstValue == toMove && secondValue != toMove {
+			array[firstIndexValue] = secondValue
+			array[secondIndexValue] = firstValue
+			firstIndexValue++
+			secondIndexValue--
+		} else {
+
+		}
+	}
+	return array
 }
