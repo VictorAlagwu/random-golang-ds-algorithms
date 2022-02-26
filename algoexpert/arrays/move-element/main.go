@@ -43,15 +43,17 @@ func moveElementToEndII(array []int, toMove int) []int  {
 		secondValue := array[secondIndexValue]
 		if secondValue == toMove {
 			secondIndexValue--
-		}else if firstValue != toMove && secondValue != toMove {
-			firstIndexValue++
-		}else if firstValue == toMove && secondValue != toMove {
+		}
+
+		if firstValue == toMove && secondValue != toMove {
 			array[firstIndexValue] = secondValue
 			array[secondIndexValue] = firstValue
 			firstIndexValue++
 			secondIndexValue--
-		} else {
+		}
 
+		if firstValue != toMove && secondValue != toMove {
+			firstIndexValue++
 		}
 	}
 	return array
